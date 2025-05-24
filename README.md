@@ -2,16 +2,13 @@
 
 A robust FastAPI application demonstrating rate limiting implementation using a sliding window algorithm. This project showcases how to protect API endpoints from abuse by limiting the number of requests per client IP address.
 
-## 📋 Table of Contents
+## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Rate Limiting Details](#rate-limiting-details)
 - [Testing](#testing)
 - [Example Responses](#example-responses)
-- [How It Works](#how-it-works)
-- [Contributing](#contributing)
 
 ## Features
 
