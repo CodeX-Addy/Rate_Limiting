@@ -5,7 +5,7 @@ from typing import Dict, List
 from collections import defaultdict
 import asyncio
 
-app = FastAPI(title="Rate Limiting App", version="1.0.0")
+app = FastAPI(title="Rate Limiting Test", version="1.0.0")
 
 class RateLimiter:
     """
@@ -32,7 +32,7 @@ class RateLimiter:
         cutoff_time = current_time - self.time_window
         self.requests[client_ip] = [req_time for req_time in request_times if req_time > cutoff_time]
         
-        # Check if under rate limit
+        ## Check if under rate limit
         current_request_count = len(self.requests[client_ip])
         
         if current_request_count < self.max_requests:
