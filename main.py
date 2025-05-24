@@ -88,6 +88,7 @@ async def check_rate_limit(request: Request):
     
     return rate_info
 
+## API Routes
 @app.get("/")
 async def root():
     """
