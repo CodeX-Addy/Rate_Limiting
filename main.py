@@ -86,7 +86,6 @@ async def check_rate_limit(request: Request):
             }
         )
     
-    # Return rate limit info for successful requests
     return rate_info
 
 @app.get("/")
@@ -95,7 +94,7 @@ async def root():
     Basic endpoint without rate limiting for testing server status
     """
     return {
-        "message": "FastAPI Rate Limiting Demo is running!",
+        "message": "FastAPI Rate Limiting App is running!",
         "endpoints": {
             "/protected": "Rate limited endpoint (5 requests/minute)",
             "/status": "Check your current rate limit status"
@@ -132,7 +131,7 @@ async def rate_limit_status(request: Request):
     client_ip = request.client.host
     current_time = time.time()
     
-    # Get current request count without adding new request
+    ## Get current request count without adding new request
     request_times = rate_limiter.requests[client_ip]
     cutoff_time = current_time - rate_limiter.time_window
     active_requests = [req_time for req_time in request_times if req_time > cutoff_time]
@@ -171,8 +170,4 @@ async def rate_limit_handler(request: Request, exc: HTTPException):
 
 if __name__ == "__main__":
     import uvicorn
-    print("Starting FastAPI Rate Limiting Demo...")
-    print("Visit: http://localhost:8000 for the main page")
-    print("Protected endpoint: http://localhost:8000/protected (5 requests/minute)")
-    print("Status check: http://localhost:8000/status")
     uvicorn.run(app, host="0.0.0.0", port=8000)
