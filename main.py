@@ -47,7 +47,7 @@ class RateLimiter:
                 "retry_after": None
             }
         else:
-            # Rate limit exceeded
+            ## Rate limit exceeded
             oldest_request = min(self.requests[client_ip])
             retry_after = int((oldest_request + self.time_window) - current_time)
             
@@ -56,10 +56,10 @@ class RateLimiter:
                 "requests_made": current_request_count,
                 "requests_remaining": 0,
                 "reset_time": int(oldest_request + self.time_window),
-                "retry_after": max(1, retry_after)  # At least 1 second
+                "retry_after": max(1, retry_after)  ## At least 1 second
             }
 
-# Global rate limiter instance
+## Rate limiter instance
 rate_limiter = RateLimiter()
 
 async def check_rate_limit(request: Request):
@@ -67,14 +67,10 @@ async def check_rate_limit(request: Request):
     Dependency function to check rate limits
     This runs before the endpoint handler
     """
-    # Get client IP address
     client_ip = request.client.host
-    
-    # Check if request is allowed
     is_allowed, rate_info = rate_limiter.is_allowed(client_ip)
     
     if not is_allowed:
-        # Create rate limit exceeded response
         raise HTTPException(
             status_code=429,
             detail={
