@@ -1,9 +1,9 @@
-from fastapi import FastAPI, HTTPException, Request, Depends
-from fastapi.responses import JSONResponse
 import time
+import asyncio
 from typing import Dict, List
 from collections import defaultdict
-import asyncio
+from fastapi.responses import JSONResponse
+from fastapi import FastAPI, HTTPException, Request, Depends
 
 app = FastAPI(title="Rate Limiting Test", version="1.0.0")
 
