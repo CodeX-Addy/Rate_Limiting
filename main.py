@@ -56,7 +56,7 @@ class RateLimiter:
                 "requests_made": current_request_count,
                 "requests_remaining": 0,
                 "reset_time": int(oldest_request + self.time_window),
-                "retry_after": max(1, retry_after)  ## At least 1 second
+                "retry_after": max(1, retry_after)  
             }
 
 ## Rate limiter instance
