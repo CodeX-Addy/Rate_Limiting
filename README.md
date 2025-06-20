@@ -24,7 +24,7 @@ A robust FastAPI application demonstrating rate limiting implementation using a 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/CodeX-Addy/Rate_Limiting_Py.git
+   git clone https://github.com/CodeX-Addy/Rate_Limiting.git
    cd Rate_Limiting_Py
    ```
 
