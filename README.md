@@ -1,6 +1,6 @@
 # FastAPI Rate Limiting 
 
-A robust FastAPI application demonstrating rate limiting implementation using a sliding window algorithm. This project showcases how to protect API endpoints from abuse by limiting the number of requests per client IP address.
+A FastAPI application demonstrating rate limiting implementation using a sliding window algorithm. This project showcases how to protect API endpoints from abuse by limiting the number of requests per client IP address.
 
 ## Table of Contents
 - [Features](#features)
