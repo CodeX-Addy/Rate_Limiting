@@ -9,7 +9,7 @@ app = FastAPI(title="Rate Limiting Test", version="1.0.0")
 
 class RateLimiter:
     """
-    Robust Rate Limiter using sliding window technique
+    Rate Limiter using sliding window technique
     Tracks requests per IP address with configurable limits
     """
     def __init__(self):
