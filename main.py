@@ -5,7 +5,7 @@ from collections import defaultdict
 from fastapi.responses import JSONResponse
 from fastapi import FastAPI, HTTPException, Request, Depends
 
-app = FastAPI(title="Rate Limiting Test With FastAPI", version="1.0")
+app = FastAPI(title="Rate Limiting With FastAPI", version="1.0")
 
 class RateLimiter:
     """
