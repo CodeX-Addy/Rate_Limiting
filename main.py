@@ -15,7 +15,7 @@ class RateLimiter:
     def __init__(self):
         ## Storing request timestamps per IP address
         self.requests: Dict[str, List[float]] = defaultdict(list)
-        self.max_requests = 5 ## Maximum requests allowed per IP -> 5 requests per minute
+        self.max_requests = 5 ## Maximum requests allowed -> 5 requests per minute
         self.time_window = 60  ## Time window in seconds -> 60 seconds (1 minute)
     
     def is_allowed(self, client_ip: str) -> tuple[bool, dict]:
